@@ -81,4 +81,14 @@ git clone https://github.com/oymisaki/learngit.git
 ```
 也可以使用 `git://` 协议，比 `https://` 协议更快
 
+## 分支管理
 
+### 创建与合并分支
+> Git 创建分支实际上，创建一个分支指针，并将 `HEAD` 指针指向分支，在分支上修改上，分支的指针移动，合并时，将 `master` 的指针与分支的指针相同就完成合并
+```sh
+git branch dev # 创建新分支
+git checkout dev # 切换分支
+
+git branch # 列出分支
+git checkout -b dev # 创建并切换分支
+```
