@@ -52,3 +52,14 @@ git reflog
   git reset HEAD readme.md
   # 撤销文件暂存区的修改，
   ```
+
+### 删除文件
+```sh
+rm test.txt
+# 在工作区删除了文件
+git rm text
+git commit -m "remove test.txt"
+# 在版本库中删除
+git checkout -- test.txt
+# 删错了，需要恢复
+```
