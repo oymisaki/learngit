@@ -88,7 +88,12 @@ git clone https://github.com/oymisaki/learngit.git
 ```sh
 git branch dev # 创建新分支
 git checkout dev # 切换分支
+git merge dev # 合并分支
+git branch -d dev # 删除分支
 
 git branch # 列出分支
 git checkout -b dev # 创建并切换分支
 ```
+
+### 解决冲突
+Creating a new branch is quick AND simple.
