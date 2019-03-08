@@ -136,10 +136,39 @@ git stash pop
 # 恢复工作现场
 ```
 
-恢复工作现场也可以用
+恢复工作现场也可以用，**如果恢复现场时出现冲突时，解决冲突后，需要提交并将stash中储存的工作区手动drop掉**
 ```sh
 git stash apply id
 # 恢复，但是不删除
 git stash drop id
 # 需要手动给删除
+```
+
+### 多人协作
+
+```sh
+git remote # 看远程库信息
+git remove -v # 更详细的信息
+
+git checkout -b dev origin/dev
+# 默认clone下来的是master分支，如果要在dev分支上开发，要将远程的dev分支克隆到本地
+```
+
+多人协作，`push` 到一个分支时可能会出现冲突，这时需要把分支的新提交 `pull` 到本地后，手动合并冲突
+
+```sh
+git checkout -b dev origin/dev
+# 现在本地创建同名分支
+git branch --set-upstream-to=origin/dev dev
+git pull
+# 指定本地与远程的分支链接后，拉到本地，解决冲突
+git commit -m "fix env conflict"
+# 提交到dev分支
+git push origin dev
+# 推送鬼刀远程库的dev分支
+```
+如果多人提交，在历史上会产生分支，使用 `rebase` 命令，将所有的历史分支变成历史一条线，更干净好看
+
+```sh
+git rebase
 ```
