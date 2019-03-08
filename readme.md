@@ -97,6 +97,25 @@ git checkout -b dev # 创建并切换分支
 
 ### 解决冲突
 Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容，修改好保存，再提交，手动提交冲突。
+```
+git log --graph --pretty=oneline --abbrev-commit
+# 查看分支情况
+git branch -d feature1
+# 删除分支
+```
+
+### 分支策略
+```sh
+git merge --no-ff -m "merge with no-ff" dev
+# 加上 --no-ff 参数，就不是 fast forward 模式，能够保存分支信息，并且会变成commit，所以要加后面的参数
+```
+
+>首先，`master` 分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
+>
+>那在哪干活呢？干活都在  `dev`  分支上，也就是说， `dev` 分支是不稳定的，到某个时候，比如1.0版本发布时，再把 `dev`分支合并
+>
+>到 `master`上，在 `master` 分支发布1.0版本；
+你和你的小伙伴们每个人都在 `dev` 分支上干活，每个人都有自己的分支，时不时地往 `dev` 分支上合并就可以了。
 
 ### bug分支
 ```sh
@@ -110,4 +129,17 @@ git commit -m "fix bug 101"
 git checkout master
 git merge --no-ff -m "merged bug fix 101" issue-101
 # 合并分支
+
+git stash list
+# 看工作现场列表
+git stash pop
+# 恢复工作现场
+```
+
+恢复工作现场也可以用
+```sh
+git stash apply id
+# 恢复，但是不删除
+git stash drop id
+# 需要手动给删除
 ```
