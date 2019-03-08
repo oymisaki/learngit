@@ -63,3 +63,22 @@ git commit -m "remove test.txt"
 git checkout -- test.txt
 # 删错了，需要恢复
 ```
+
+## 远程仓库
+
+### 关联远程库
+```sh
+git remote add origin https://github.com/oymisaki/learngit.git  # 关联远程库
+git push -u origin master
+# 推送到远程库上， -u 表示将本地和远程的master分支关联起来
+git push origin master
+# 推送
+```
+
+### 克隆
+```sh
+git clone https://github.com/oymisaki/learngit.git
+```
+也可以使用 `git://` 协议，比 `https://` 协议更快
+
+
