@@ -21,4 +21,15 @@ git commit -m "add 2 files"
 ```sh
 git status
 git diff # 看修改
+git add readme.md
+git status
+git commit -m "add ..."
+```
+
+### 版本回退
+```sh
+git log
+git log --pretty=oneline # 省略无关参数
+git reset --hard HEAD^
+# ^回退一个版本，^^回退两个版本
 ```
