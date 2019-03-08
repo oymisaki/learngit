@@ -98,3 +98,16 @@ git checkout -b dev # 创建并切换分支
 ### 解决冲突
 Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容，修改好保存，再提交，手动提交冲突。
 
+### bug分支
+```sh
+git stash
+# 储存目前工作状态
+git checkout -b issue-101
+# 创建bug分支
+git add readme.txt 
+git commit -m "fix bug 101"
+# 提交bug修复
+git checkout master
+git merge --no-ff -m "merged bug fix 101" issue-101
+# 合并分支
+```
