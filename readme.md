@@ -32,6 +32,8 @@ git log
 git log --pretty=oneline # 省略无关参数
 git reset --hard HEAD^
 # ^回退一个版本，^^回退两个版本
+git reset --hard 1094a
+# 回到指定版本
+git reflog
+# 忘记版本号，可以从这里找回
 ```
-
-*这是用来测试的时光机的行*
