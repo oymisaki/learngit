@@ -33,3 +33,5 @@ git log --pretty=oneline # 省略无关参数
 git reset --hard HEAD^
 # ^回退一个版本，^^回退两个版本
 ```
+
+*这是用来测试的时光机的行*
