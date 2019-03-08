@@ -92,3 +92,4 @@ git checkout dev # 切换分支
 git branch # 列出分支
 git checkout -b dev # 创建并切换分支
 ```
+这是一个冲突的测试 quick&simple
