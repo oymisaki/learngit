@@ -37,3 +37,18 @@ git reset --hard 1094a
 git reflog
 # 忘记版本号，可以从这里找回
 ```
+
+### 工作区与暂存区
+1. 工作区 workspace, `git status` 显示 `untracked` 或者 `unstaged`.
+2. 暂存区 通过 `git add` 添加到 `stage`， 
+3. 版本库 通过 `git commit` 提交到 `repository`
+
+### 管理、撤销修改
++ 每次修改要 `git add` 后才能**commit**到版本库，否则只在工作区
++ 要撤销修改：
+  ```sh
+  git checkout -- readme.md
+  # 撤销文件工作区的修改
+  git reset HEAD readme.md
+  # 撤销文件暂存区的修改，
+  ```
