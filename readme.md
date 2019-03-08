@@ -88,8 +88,13 @@ git clone https://github.com/oymisaki/learngit.git
 ```sh
 git branch dev # 创建新分支
 git checkout dev # 切换分支
+git merge dev # 合并分支
+git branch -d dev # 删除分支
 
 git branch # 列出分支
 git checkout -b dev # 创建并切换分支
 ```
-这是一个冲突的测试 quick&simple
+
+### 解决冲突
+Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容，修改好保存，再提交，手动提交冲突。
+
