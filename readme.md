@@ -50,6 +50,8 @@ git reflog
   ```sh
   git checkout -- readme.md
   # 撤销文件工作区的修改
+  git checkout -- *
+  # 撤销所有工作区的修改
   git reset HEAD readme.md
   # 撤销文件暂存区的修改，
   ```
@@ -89,11 +91,17 @@ git clone https://github.com/oymisaki/learngit.git
 ```sh
 git branch dev # 创建新分支
 git checkout dev # 切换分支
-git merge dev # 合并分支
-git branch -d dev # 删除分支
-
-git branch # 列出分支
 git checkout -b dev # 创建并切换分支
+
+git branch # 列出所有分支
+
+# 对dev分支进行修改，再merge回master分支
+
+git checkout master 
+git merge dev # 合并dev分支到目前的master分支上
+
+git branch -d dev # 合并完成后，可以删除分支
+
 ```
 
 ### 解决冲突
