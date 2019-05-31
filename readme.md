@@ -102,6 +102,10 @@ git merge dev # 合并dev分支到目前的master分支上
 
 git branch -d dev # 合并完成后，可以删除分支
 
+# 从远程把已有分支拉到本地
+git fetch origin dev
+git checkout -b dev origin/dev
+git pull origin dev
 ```
 
 ### 解决冲突
