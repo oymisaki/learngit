@@ -101,11 +101,17 @@ git checkout master
 git merge dev # 合并dev分支到目前的master分支上
 
 git branch -d dev # 合并完成后，可以删除分支
-
+```
+#### 远程分支管理
+```sh
 # 从远程把已有分支拉到本地
 git fetch origin dev
 git checkout -b dev origin/dev
 git pull origin dev
+
+# 在本地删除远程分支
+git branch -r -d origin/branch-name
+git push origin :branch-name
 ```
 
 ### 解决冲突
