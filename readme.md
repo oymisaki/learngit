@@ -3,7 +3,7 @@
 ## config
 ```sh
 git config --global user.name "xxx"
-git config --global email.name "email"
+git config --global user.email "email"
 # 还可以使用--local选项
 ```
 
